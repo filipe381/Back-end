@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar</title>
+</head>
+<body>
+<form action="#" th:action="@{/cliente/salvar}" th:object="${cliente}" method="post">
+    <label>Nome</label>
+    <input type="text" th:field="*{nome}" id="nome" />
+    <label>Email</label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <label>Cpf</label>
+    <input type="text" th:field="*{cpf}" id="cpf" />
+    <label>Data de Nascimento</label>
+    <input type="text" th:field="*{dataNascimento}" id="dataNascimento" />
+    <input type="submit" Value="criar cliente">
+</form>
+</body>
+</html>
