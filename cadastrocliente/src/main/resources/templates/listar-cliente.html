@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-</head>
+<head th:replace="~{header::header}"></head>
 <body>
-<a href="/cliente/adicionar">Criar Novo cliente</a>
-<table>
+<a class="btn btn-primary" href="/cliente/adicionar">Criar Novo cliente</a>
+<table class="table table-striped">
  <tr>
      <th>Id</th>
      <th>Nome</th>
@@ -23,8 +19,8 @@
      <td th:text="${cliente.cpf}"></td>
      <td th:text="${cliente.dataNascimento}"></td>
      <td>
-         <a th:href="@{/cliente/excluir/{id}(id=${cliente.id})}">Excluir</a>
-         <a th:href="@{/cliente/editar/{id}(id=${cliente.id})}">Editar</a>
+         <a class="btn btn-outline-primary" th:href="@{/cliente/excluir/{id}(id=${cliente.id})}">Excluir</a>
+         <a class="btn btn-outline-primary" th:href="@{/cliente/editar/{id}(id=${cliente.id})}">Editar</a>
      </td>
  </tr>
 </table>

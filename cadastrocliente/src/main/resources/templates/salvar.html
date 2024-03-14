@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar</title>
-</head>
+<head th:replace="~{header::header}"></head>
 <body>
 <form action="#" th:action="@{/cliente/salvar}" th:object="${cliente}" method="post">
-    <label>Nome</label>
-    <input type="text" th:field="*{nome}" id="nome" />
-    <label>Email</label>
-    <input type="text" th:field="*{email}" id="email"/>
-    <label>Cpf</label>
-    <input type="text" th:field="*{cpf}" id="cpf" />
-    <label>Data de Nascimento</label>
-    <input type="text" th:field="*{dataNascimento}" id="dataNascimento" />
-    <input type="submit" Value="criar cliente">
+    <div class="md-3">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control" th:field="*{nome}" id="nome" />
+        <span th:if="${#fields.hasErrors('nome')}" th:error="*{nome}"></span>
+    </div>
+    <div class="md-3">
+        <label class="form-label" >Email</label>
+        <input type="text" class="form-control" th:field="*{email}" id="email"/>
+        <span th:if="${#fields.hasErrors('email')}" th:error="*{email}"></span>
+    </div>
+    <div class="md-3">
+        <label class="form-label" >Cpf</label>
+        <input type="text" class="form-control" th:field="*{cpf}" id="email"/>
+        <span th:if="${#fields.hasErrors('cpf')}" th:error="*{cpf}"></span>
+    </div>
+    <div class="md-3">
+        <label class="form-label" >Data de nascimento</label>
+        <input type="text" class="form-control" th:field="*{dataNascimento}" id="email"/>
+        <span th:if="${#fields.hasErrors('dataNascimento')}" th:error="*{dataNascimento}"></span>
+    </div>
+
+    <input class="btn btn-primary" type="submit" Value="criar cliente">
 </form>
 </body>
 </html>
